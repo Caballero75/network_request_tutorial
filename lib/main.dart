@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:network_request/screens/home_screen.dart';
+
+import './services/websocketClient.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,7 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: HomeScreen(),
+      home: Scaffold(
+        body: WSClient(),
+      ),
     );
   }
 }

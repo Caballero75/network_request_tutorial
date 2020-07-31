@@ -25,14 +25,15 @@ class HomeScreen extends StatelessWidget {
                   children: <Widget>[
                     Expanded(
                       child: Container(
-                        child: Card(
-                          color: Colors.black.withOpacity(0.5),
-                          child: ListView.builder(
-                              itemCount: snapshot.data.length,
-                              itemBuilder: (BuildContext context, int index) {
-                                var currentPerson = snapshot.data[index];
+                        child: ListView.builder(
+                            itemCount: snapshot.data.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              var currentPerson = snapshot.data[index];
 
-                                return ListTile(
+                              return Card(
+                                color: Colors.blueGrey.withAlpha(10),
+                                elevation: 5,
+                                child: ListTile(
                                   title: Text(currentPerson.name),
                                   leading: CircleAvatar(
                                     backgroundImage:
@@ -40,9 +41,9 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   subtitle: Text(
                                       "Phone: ${currentPerson.phoneNumber}"),
-                                );
-                              }),
-                        ),
+                                ),
+                              );
+                            }),
                       ),
                     ),
                   ],
